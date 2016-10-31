@@ -1,0 +1,24 @@
+
+Name of Quantlet: LSA_PC_rotation
+
+Published in: Q3-D3-LSA
+
+Description: 'The function "LSA.PC.rotation" determines the proper sign / rotation of the LSA components (semantic space principal components)
+and extracts the top words (top_terms) of each component (PC) for the given LSA space which is created from the term document matrix TDM
+of the Quantlets by means of the SVD process. The (positive and accordingly negative) part is chosen from those terms, where the biggest
+subtotal is concentrated since the singular vectors are unique up to scalar multiples of modulus one, in the case of real matrices +/- 1.
+Finally, the top words with the highest weights are taken as "prototypes" for the semantic space principal components’ topics (PC topics).
+That way the function "LSA.PC.rotation" allows the determination of possible labels for the LSA PC’s.
+The function requires as input the LSA space which is provided via the function "lsa" (from the R package lsa).
+The remaining parameters of "LSA.PC.rotation" are optional allowing finer control of the output (number of PC’s, terms/topic etc.)'
+
+Keywords: 'data mining, text mining, term document matrix, quantnet, lsa, svd, descriptive-statistics,
+singular values, semantic space principal components, singular vectors, topic'
+
+See also: LSA_basics, LSA_kernel, LSA_basics_hist_box, LSA_heatmaps_factors, LSA_heatmaps_sum
+
+Author: Lukas Borke
+
+Submitted: 31.10.2016 by Lukas Borke
+
+Output: 'Returns a list with PC_labels (PC topics: named vectors) and SV_weights (vector of singular values)'
