@@ -36,6 +36,48 @@ singular values)'
 
 ```
 
+### Example:
+```r
+
+> LSA_PC = LSA.PC.rotation(LSA_space, n = 8)
+> LSA_PC$PC_labels
+[[1]]
+   visual    return    option      call distribut 
+     1.57      1.16      1.13      1.08      1.08 
+
+[[2]]
+   visual   densiti distribut    copula    normal 
+     0.70      0.66      0.63      0.61      0.58 
+
+[[3]]
+      dsfm       fpca   dsfmbsyc dsfmfpcaic    cluster 
+      3.88       1.65       1.04       0.55       0.42 
+
+[[4]]
+        cluster         analysi             pca      dendrogram principalcompon 
+           2.30            1.97            0.91            0.85            0.79 
+
+[[5]]
+   copula    normal distribut    gumbel      call 
+     1.17      0.97      0.96      0.81      0.62 
+
+[[6]]
+   return    copula   cluster portfolio    gumbel 
+     0.96      0.65      0.60      0.58      0.56 
+
+[[7]]
+     copula     regress      gumbel nonparametr         var 
+       1.23        1.02        0.90        0.77        0.77 
+
+[[8]]
+   requir  stflosst   stfstab distribut  approxim 
+     1.57      1.11      0.89      0.62      0.51 
+
+> LSA_PC$SV_weights
+[1] 5.64 4.87 4.46 4.43 4.28 4.12 3.95 3.88
+
+```
+
 
 ### R Code:
 ```r
@@ -60,9 +102,9 @@ lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 system.time( LSA_space <- lsa(m_a) )
 summary(LSA_space)
 
-------------------------------------------------
+# ------------------------------------------------
 # LSA Extended / Interpretation
-------------------------------------------------
+# ------------------------------------------------
 
 LSA.PC.rotation = function(LSA_space, auto_rotation = TRUE, n = 10, top_terms = 5, weight_round = 2){
 	pc_labels = c()
@@ -99,6 +141,8 @@ LSA.PC.rotation = function(LSA_space, auto_rotation = TRUE, n = 10, top_terms = 
 
 
 LSA_PC = LSA.PC.rotation(LSA_space)
+
+LSA_PC = LSA.PC.rotation(LSA_space, n = 8)
 
 LSA_PC = LSA.PC.rotation(LSA_space, auto_rotation = F)
 

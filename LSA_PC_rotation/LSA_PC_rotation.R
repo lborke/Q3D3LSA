@@ -19,9 +19,9 @@ lapply(libraries, library, quietly = TRUE, character.only = TRUE)
 system.time( LSA_space <- lsa(m_a) )
 summary(LSA_space)
 
-------------------------------------------------
+# ------------------------------------------------
 # LSA Extended / Interpretation
-------------------------------------------------
+# ------------------------------------------------
 
 LSA.PC.rotation = function(LSA_space, auto_rotation = TRUE, n = 10, top_terms = 5, weight_round = 2){
 	pc_labels = c()
@@ -58,6 +58,8 @@ LSA.PC.rotation = function(LSA_space, auto_rotation = TRUE, n = 10, top_terms = 
 
 
 LSA_PC = LSA.PC.rotation(LSA_space)
+
+LSA_PC = LSA.PC.rotation(LSA_space, n = 8)
 
 LSA_PC = LSA.PC.rotation(LSA_space, auto_rotation = F)
 
